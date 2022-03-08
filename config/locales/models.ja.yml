@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      book: 書籍メモ
+    attributes:
+      book:
+        title: タイトル
+        memo: 内容
+        author: 著者
+        picture: 画像

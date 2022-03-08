@@ -1,0 +1,17 @@
+en:
+  books: Books
+  back: Back
+  edit: Edit
+  new_book: 'New Book'
+  button:
+    edit: Edit
+    back: Back
+    show: Show
+    destroy: Destroy
+    new_book: 'New book'
+    register: Register
+  message:
+    register_complete: "%{model}was successfully registerd"
+    delete_complete: "%{model} was successfully deleted"
+    update_complete: "%{model} was successfully updated"
+    delete_confirm: "%{model} is canceled. Are you sure? "
