@@ -1,5 +1,7 @@
 ja:
-  books: 書籍メモ一覧
+  books:
+    index:
+      title: 書籍一覧
   back: 戻る
   edit: 編集
   new_book: 新規メモ

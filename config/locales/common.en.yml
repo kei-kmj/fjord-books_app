@@ -1,5 +1,7 @@
 en:
-  books: Books
+  books:
+    index:
+      title: 'Books List'
   back: Back
   edit: Edit
   new_book: 'New Book'
