@@ -2,9 +2,12 @@ en:
   books:
     index:
       title: 'Books List'
+    edit:
+      title: Edit
+    new:
+      title: 'New Book'
   back: Back
   edit: Edit
-  new_book: 'New Book'
   button:
     edit: Edit
     back: Back

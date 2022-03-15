@@ -2,9 +2,12 @@ ja:
   books:
     index:
       title: 書籍一覧
+    edit:
+      title: 編集
+    new:
+      title: 新規登録
   back: 戻る
   edit: 編集
-  new_book: 新規メモ
   button:
     edit: 編集
     back: 戻る
