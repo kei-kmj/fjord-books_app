@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>user_id</strong>
+  <%= @user.id %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to "ユーザー一覧", users_path %>
+<%= link_to "ユーザー情報変更", edit_user_registration_path %>
