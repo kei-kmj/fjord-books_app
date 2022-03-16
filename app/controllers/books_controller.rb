@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
+  # ログインしていないユーザーの直打ちを避ける
+  before_action :redirect_root
+
+
   before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books
   # GET /books.json
   def index
+    # redirect_to root_path unless user_signed_in?
     @books = Book.order(:id).page(params[:page])
   end
 
@@ -62,6 +67,10 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def redirect_root
+    redirect_to root_path unless user_signed_in?
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
