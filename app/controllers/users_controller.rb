@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  # ログインしていないユーザーの直打ちを避ける
+  # ログインしていないユーザーのURL直打ちを避ける
   before_action :redirect_root
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[show]
 
   def index
-    @users = User.order(:id)
+    @users = User.order(:id).page(params[:page])
   end
 end
 
