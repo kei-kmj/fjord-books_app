@@ -4,7 +4,6 @@ class BooksController < ApplicationController
   # ログインしていないユーザーの直打ちを避ける
   before_action :redirect_root
 
-
   before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books
