@@ -11,4 +11,8 @@
 </p>
 
 <%= link_to "ユーザー一覧", users_path %>
-<%= link_to "ユーザー情報変更", edit_user_registration_path %>
+
+<% if @user.id == current_user.id %>
+  <%= link_to "ユーザー情報変更", edit_user_registration_path %>
+<% end %>
+
