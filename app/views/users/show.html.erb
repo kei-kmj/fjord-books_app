@@ -1,16 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>user_id</strong>
-  <%= @user.id %>
-</p>
-
-<p>
-  <strong>email:</strong>
+  <strong>name</strong>
+  <%= @user.name %>
+</p><p>
+  <strong>email</strong>
   <%= @user.email %>
+</p><p>
+  <strong>〒</strong>
+  <%= @user.post_code %>
+</p><p>
+  <strong>address</strong>
+  <%= @user.address %>
+
+</p><p>
+  <strong>about_me</strong>
+  <%= @user.about_me %>
 </p>
 
-<%= link_to "ユーザー一覧", users_path %>
 
 <% if @user.id == current_user.id %>
   <%= link_to "ユーザー情報変更", edit_user_registration_path %>
