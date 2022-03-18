@@ -1,0 +1,41 @@
+ja:
+  welcome: ようこそ
+  hello: こんにちは
+  Log in: ログイン
+  title: "ブックノート"
+  books:
+    index:
+      title: 書籍一覧
+    edit:
+      title: 編集
+    new:
+      title: 新規登録
+  back: 戻る
+  edit: 編集
+  button:
+    edit: 編集
+    back: 戻る
+    show: 詳細
+    destroy: 削除
+    new_book: 新規作成
+    register: 登録
+    Log in: ログイン
+    Sign up: 作成
+    Update: 更新
+    Send me reset password instructions: メール送信
+    Cancel my account: アカウント削除
+
+  message:
+    register_complete: "%{model}登録完了"
+    delete_complete: "%{model}削除完了"
+    update_complete: "%{model}更新完了"
+    delete_confirm: "%{model}を削除しますか？ "
+  Registration: "ユーザー登録"
+  characters_minimum: "文字以上"
+  log_out: "ログアウト"
+  users_index: "ユーザー一覧"
+  books_index: "ブックノート一覧"
+  new_book: "新規ブックノート作成"
+  show: "詳細"
+
+
