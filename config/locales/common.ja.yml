@@ -2,7 +2,7 @@ ja:
   welcome: ようこそ
   hello: こんにちは
   Log in: ログイン
-  title: "ブックノート"
+  title: ブックログ
   books:
     index:
       title: 書籍一覧
@@ -34,8 +34,8 @@ ja:
   characters_minimum: "文字以上"
   log_out: "ログアウト"
   users_index: "ユーザー一覧"
-  books_index: "ブックノート一覧"
-  new_book: "新規ブックノート作成"
+  books_index: "ブックノメモ一覧"
+  new_book: "新規ブックメモ作成"
   show: "詳細"
-
+  please_enter_with_3_single-byte_numbers_+_hyphen_(-)_+_4_single-byte_numbers: "は半角数字3桁+ハイフン(-)+半角数字4桁で入力してください"
 

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-
   # ログインしていないユーザーのURL直打ちを避ける
   before_action :redirect_root
 

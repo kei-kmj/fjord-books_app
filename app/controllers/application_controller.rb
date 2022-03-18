@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :post_code, :address, :about_me])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name post_code address about_me])
   end
 end

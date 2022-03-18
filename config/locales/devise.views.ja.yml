@@ -27,8 +27,8 @@ ja:
         instruction_3: "上のリンクにアクセスして新しいパスワードを設定するまで、パスワードは変更されません。"
         someone_has_requested_a_link_to_change_your_password:
           _You_can_do_this_through_the_link_below: "以下のリンクからパスワードを変更してください。"
-        if_you_didnt_request_this, please_ignore_this_email: "このメールに心当たりが無ければメールを無視してください"
-        your_password_wont_change_until_you_access_the_link_above_and_create_a_new_one: "上記のリンクにアクセスして新しいパスワードを作成するまで、パスワードは変更されません"
+        if_you_didnt_request_this, please_ignore_this_email: "このメールに心当たりが無ければメールを無視してください。"
+        your_password_wont_change_until_you_access_the_link_above_and_create_a_new_one: "上記のリンクにアクセスして新しいパスワードを作成するまで、パスワードは変更されません。"
       unlock_instructions:
         action: "アカウントのロック解除"
         greeting: "こんにちは、%{recipient}さん!"
@@ -81,5 +81,6 @@ ja:
   we're_contacting_you_to_notify_you_that_your_email_has_been_changed_to: "メールアドレスを%{@resource.email}に変更しました。"
   unlock_my_account: "ロックを解除する"
   change_my_password: "パスワードを変更する"
+
 
 
