@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  # ログインしていないユーザーのURL直打ちを避ける
-  before_action :redirect_root
+  # ログインしていないユーザーのURL直打ち禁止
+  before_action :redirect_root_unless_signed_in
 
   def index
     @users = User.order(:id).page(params[:page]).per(5)
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   private
 
-  def redirect_root
+  def redirect_root_unless_signed_in
     redirect_to root_path unless user_signed_in?
   end
 end
