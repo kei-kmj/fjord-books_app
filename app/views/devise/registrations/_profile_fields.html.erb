@@ -4,6 +4,17 @@
 </div>
 
 <div class="field">
+  <% if @user.image.attached? %>
+    <%= image_tag @user.image.variant(resize: '40x40'), class: "image" %>
+  <% end %>
+</div>
+
+<div class="field">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</div>
+
+<div class="field">
   <%= f.label :postal_code %>
   <%= f.text_field :postal_code %>
 </div>
