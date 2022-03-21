@@ -3,8 +3,8 @@
 class User < ApplicationRecord
   has_many :follower, class_name: "Follow", foreign_key: "follower_id", dependent: :destroy
   has_many :following, class_name: "Follow", foreign_key: "following_id", dependent: :destroy
-  has_many :follower_user, through: :follower, source: :following # I'm following
-  has_many :following_user, through: :following, source: :follower # My follower
+  has_many :following_user, through: :follower, source: :following # I'm following
+  has_many :follower_user, through: :following, source: :follower # My follower
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

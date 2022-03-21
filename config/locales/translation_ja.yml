@@ -18,3 +18,10 @@ ja:
         avatar: ユーザ画像
   following: "フォロー"
   follower: "フォロワー"
+  unfollow: "フォローを外す"
+  follow: "フォローする"
+  users:
+    followers:
+      list: "フォロワー一覧"
+    followings:
+      list: "フォロー一覧"

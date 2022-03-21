@@ -1,0 +1,10 @@
+<h1><%= t '.list' %></h1>
+<div>
+  <% @users.each do |user| %>
+    <div>
+      <%= link_to user_path(user) do %>
+        <p><%= user.name %></p>
+      <% end %>
+  <% end %>
+  </div>
+</div>
