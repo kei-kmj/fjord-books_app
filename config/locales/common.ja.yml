@@ -1,0 +1,22 @@
+ja:
+  books:
+    index:
+      title: 書籍一覧
+    edit:
+      title: 編集
+    new:
+      title: 新規登録
+  back: 戻る
+  edit: 編集
+  button:
+    edit: 編集
+    back: 戻る
+    show: 詳細
+    destroy: 削除
+    new_book: 新規作成
+    register: 登録
+  message:
+    register_complete: "%{model}登録完了"
+    delete_complete: "%{model}削除完了"
+    update_complete: "%{model}更新完了"
+    delete_confirm: "%{model}を削除しますか？ "
