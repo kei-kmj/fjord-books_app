@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class FollowsController < ApplicationController
   def create
-    current_user.follow(params[:user_id])
+    current_user.create_follow(params[:user_id])
     redirect_to request.referer
   end
 
@@ -9,4 +11,3 @@ class FollowsController < ApplicationController
     redirect_to request.referer
   end
 end
-
