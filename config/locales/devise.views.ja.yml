@@ -35,7 +35,7 @@ ja:
         instruction: "アカウントのロックを解除するには下のリンクをクリックしてください。"
         message: "ログイン失敗が繰り返されたため、アカウントはロックされています。"
         your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: "サインインに失敗した回数が多すぎるため、アカウントがロックされました。"
-        click_the_link_below_to_unlock_your_account: "アカウントのロックを解除する院は、以下のリンクをクリックして下さい。"
+        click_the_link_below_to_unlock_your_account: "アカウントのロックを解除するには、以下のリンクをクリックして下さい。"
     passwords:
       edit:
         change_my_password: "パスワードを変更する"
@@ -69,18 +69,7 @@ ja:
         didn_t_receive_unlock_instructions: "アカウントの凍結解除方法のメールを受け取っていませんか?"
         forgot_your_password: "パスワードを忘れましたか?"
         sign_in: "ログイン"
-        sign_in_with_provider: "%{provider}でログイン"
         sign_up: "アカウント登録"
     unlocks:
       new:
-        resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
-  Resend confirmation instructions: "確認手順の再送"
-  you_can_confirm_your_account_email_through_the_link_below: "以下のリンクからアカウントのメールアドレスを確認できます"
-  confirm_my_account: "アカウントを確認する"
-  we're_contacting_you_to_notify_you_that_your_email_is_being_changed_to: "メールアドレスを%{@resource.unconfirmed_email}に変更します。"
-  we're_contacting_you_to_notify_you_that_your_email_has_been_changed_to: "メールアドレスを%{@resource.email}に変更しました。"
-  unlock_my_account: "ロックを解除する"
   change_my_password: "パスワードを変更する"
-
-
-
