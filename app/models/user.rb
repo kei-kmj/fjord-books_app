@@ -16,6 +16,6 @@ class User < ApplicationRecord
     post_code_pattern = /[0-9]{3}+-[0-9]{4}/
     return if post_code_pattern.match(post_code)
 
-    errors.add(:post_code, I18n.t('please_enter_with_3_single-byte_numbers_+_hyphen_(-)_+_4_single-byte_numbers'))
+    errors.add(:post_code, I18n.t('errors.models.user.post_code'))
   end
 end

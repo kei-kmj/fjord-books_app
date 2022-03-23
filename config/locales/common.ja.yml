@@ -37,5 +37,8 @@ ja:
   books_index: "ブックノメモ一覧"
   new_book: "新規ブックメモ作成"
   show: "詳細"
-  please_enter_with_3_single-byte_numbers_+_hyphen_(-)_+_4_single-byte_numbers: "は半角数字3桁+ハイフン(-)+半角数字4桁で入力してください"
+  errors:
+    models:
+      user:
+        post_code: "は半角数字3桁＋ー（ハイフン）＋半角数字4桁で入力してください"
 
