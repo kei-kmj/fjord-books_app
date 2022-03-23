@@ -29,13 +29,6 @@ ja:
           _You_can_do_this_through_the_link_below: "以下のリンクからパスワードを変更してください。"
         if_you_didnt_request_this, please_ignore_this_email: "このメールに心当たりが無ければメールを無視してください。"
         your_password_wont_change_until_you_access_the_link_above_and_create_a_new_one: "上記のリンクにアクセスして新しいパスワードを作成するまで、パスワードは変更されません。"
-      unlock_instructions:
-        action: "アカウントのロック解除"
-        greeting: "こんにちは、%{recipient}さん!"
-        instruction: "アカウントのロックを解除するには下のリンクをクリックしてください。"
-        message: "ログイン失敗が繰り返されたため、アカウントはロックされています。"
-        your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: "サインインに失敗した回数が多すぎるため、アカウントがロックされました。"
-        click_the_link_below_to_unlock_your_account: "アカウントのロックを解除するには、以下のリンクをクリックして下さい。"
     passwords:
       edit:
         change_my_password: "パスワードを変更する"
