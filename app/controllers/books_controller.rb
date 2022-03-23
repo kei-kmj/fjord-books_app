@@ -2,7 +2,7 @@
 
 class BooksController < ApplicationController
   # ログインしていないユーザーのURL直打ち禁止
-  before_action :redirect_root_unless_signed_in
+  before_action :authenticate_user!
 
   before_action :set_book, only: %i[show edit update destroy]
 
@@ -65,10 +65,6 @@ class BooksController < ApplicationController
   end
 
   private
-
-  def redirect_root_unless_signed_in
-    redirect_to root_path unless user_signed_in?
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
