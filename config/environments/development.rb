@@ -2,10 +2,6 @@
 
 require 'active_support/core_ext/integer/time'
 
-# 動的にdefault_url_options[:host]をセットする
-host = 'samplehost'
-Rails.application.routes.default_url_options[:host] = host
-
 Rails.application.configure do
 
   # mail setting
@@ -13,7 +9,6 @@ Rails.application.configure do
   config.action_mailer.perform_caching = true
   # default url
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
 
   # Settings specified here will take precedence over those in config/application.rb.
 
