@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   # ログインしていないユーザーのURL直打ち禁止
-  before_action :redirect_root_unless_signed_in
+  before_action :authenticate_user!
 
   def index
     @users = User.order(:id).page(params[:page]).per(5)
