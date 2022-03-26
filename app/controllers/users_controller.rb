@@ -11,10 +11,4 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-
-  private
-
-  def redirect_root_unless_signed_in
-    redirect_to root_path unless user_signed_in?
-  end
 end
