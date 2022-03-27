@@ -27,6 +27,12 @@
             <%= link_to t('devise.registrations.edit.title'), edit_user_registration_path %>
           </li>
           <li>
+          <%= link_to "日報作成", new_user_report_path(:user_id) %>
+          </li>
+          <li>
+            <%= link_to "自分の日報", user_reports_path(:report_id) %>
+          </li>
+          <li>
             <%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %>
           </li>
         </ul>

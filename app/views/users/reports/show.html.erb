@@ -1,0 +1,8 @@
+<h2>日報</h2>
+<p><%= @report.title %></p>
+<p><%= @report.text %></p>
+
+<%= link_to "編集", edit_user_report_path %>
+<%= link_to "日報一覧", user_reports_path %>
+<%= link_to "日報削除", user_report_path(@report.id), method: :delete, data: { confirm: t('views.common.delete_confirm') }  %>
+
