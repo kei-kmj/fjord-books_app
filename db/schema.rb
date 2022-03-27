@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_03_26_053205) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
-  create_table "all_reports", force: :cascade do |t|
+  create_table "reports", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.integer "user_id"

@@ -27,13 +27,13 @@
             <%= link_to t('devise.registrations.edit.title'), edit_user_registration_path %>
           </li>
           <li>
-          <%= link_to "日報作成", new_user_report_path(:user_id) %>
+          <%= link_to t('create_report'), new_user_report_path(:user_id) %>
           </li>
           <li>
-            <%= link_to "自分の日報", user_reports_path(:report_id) %>
+            <%= link_to t('my_reports'), user_reports_path(:report_id) %>
           </li>
           <li>
-            <%= link_to "みんなの日報", reports_path %>
+            <%= link_to t('reports_all'), reports_path %>
           </li>
           <li>
             <%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %>

@@ -4,15 +4,14 @@ class Users::ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
   def index
-    @reports = Report.where(user_id: current_user.id)
+    @reports = Report.where(user_id: current_user.id).order(:created_at)
   end
 
   def new
     @report = Report.new
   end
 
-  def show
-  end
+  def show; end
 
   def create
     params[:report][:user_id] = current_user.id
@@ -34,7 +33,7 @@ class Users::ReportsController < ApplicationController
     # params[:report][:user_id] = current_user.id
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to user_report_path, notice: "更新しました" }
+        format.html { redirect_to user_report_path, notice: t('controllers.common.notice_update') }
       else
         format.html { render :edit }
       end
@@ -44,7 +43,7 @@ class Users::ReportsController < ApplicationController
   def destroy
     @report.destroy
     respond_to do |format|
-      format.html { redirect_to user_reports_path, notice: "Are you sure?" }
+      format.html { redirect_to user_reports_path, notice: t('controllers.common.notice_destroy') }
     end
   end
 

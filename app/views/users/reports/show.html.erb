@@ -1,8 +1,14 @@
-<h2>日報</h2>
-<p><%= @report.title %></p>
-<p><%= @report.text %></p>
+<h2><%= @report.title %></h2>
 
-<%= link_to "編集", edit_user_report_path %>
-<%= link_to "日報一覧", user_reports_path %>
-<%= link_to "日報削除", user_report_path(@report.id), method: :delete, data: { confirm: t('views.common.delete_confirm') }  %>
+<p><%= Report.human_attribute_name(:text) %>：<%= @report.text %></p>
+<p><%= Report.human_attribute_name(:create_at) %>：<%= @report.created_at %></p>
+
+<% if current_user.id == @report.user_id %>
+  <%= link_to t('views.common.edit'), edit_user_report_path %>
+
+  <%= link_to t('views.common.destroy'), user_report_path(@report.id), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+
+<% end %>
+
+<%= link_to t('views.common.back'), request.referer %>
 
