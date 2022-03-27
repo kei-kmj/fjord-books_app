@@ -31,9 +31,10 @@ class Users::ReportsController < ApplicationController
   end
 
   def update
+    # params[:report][:user_id] = current_user.id
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to @report, notice: "更新しました" }
+        format.html { redirect_to user_report_path, notice: "更新しました" }
       else
         format.html { render :edit }
       end

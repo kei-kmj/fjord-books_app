@@ -1,0 +1,24 @@
+<h1><%= t '.title' %></h1>
+<%= form_with(model: @report, url: user_report_path, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text, size: "22x10" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+
+<%= link_to "戻る", user_report_path %>
+
+<%= link_to "日報削除", user_report_path(@report.id), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+<%= link_to "日報一覧", user_reports_path %>

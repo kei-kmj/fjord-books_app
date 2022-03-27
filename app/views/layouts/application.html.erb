@@ -33,6 +33,9 @@
             <%= link_to "自分の日報", user_reports_path(:report_id) %>
           </li>
           <li>
+            <%= link_to "みんなの日報", reports_path %>
+          </li>
+          <li>
             <%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %>
           </li>
         </ul>
