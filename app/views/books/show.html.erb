@@ -17,8 +17,30 @@
 
 <p>
   <strong><%= Book.human_attribute_name(:picture) %>:</strong>
-  <%= image_tag(@book.picture_url) if @book.picture.present? %>
+  <%= image_tag(@book.picture_url,:size =>'200x200') if @book.picture.present? %>
 </p>
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
+
+
+<br>
+
+<%= render 'comments/form', commentable: @book, comment: @comments %>
+
+<p>コメント件数：<%= @comments.count %></p>
+<% @comments.each do |comment| %>
+  <div>
+    <%= comment.user_id %>
+    <%= comment.created_at.strftime('%Y/%m/%d') %><br>
+    <div>
+      <%= comment.comment %>
+      <% if comment.user == current_user %>
+        <div>
+          <%= link_to t('views.common.destroy'), book_comment_path(@book, comment.id), method: :delete %>
+        </div>
+        </div>
+        </div>
+      <% end %>
+<% end %>
+

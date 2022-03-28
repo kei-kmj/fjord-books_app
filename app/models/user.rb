@@ -2,6 +2,9 @@
 
 class User < ApplicationRecord
   has_many :reports, dependent: :nullify
+
+  has_many :comments, dependent: :nullify
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

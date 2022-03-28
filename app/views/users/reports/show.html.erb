@@ -12,3 +12,6 @@
 
 <%= link_to t('views.common.back'), request.referer %>
 
+<%= @reports.name %>
+<%= render 'comments/form', commentable: @report, comment: @comments %>
+
