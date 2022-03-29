@@ -17,7 +17,7 @@
 
 <p>
   <strong><%= Book.human_attribute_name(:picture) %>:</strong>
-  <%= image_tag(@book.picture_url,:size =>'200x200') if @book.picture.present? %>
+  <%= image_tag(@book.picture_url, :size => '200x200') if @book.picture.present? %>
 </p>
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
@@ -28,11 +28,16 @@
 
 <%= render 'comments/form', commentable: @book, comment: @comments %>
 
-<p>コメント件数：<%= @comments.count %></p>
+<p><%= t'comments_count' %>：<%= @comments.count %></p>
 <% @comments.each do |comment| %>
   <div>
-    <%= comment.user_id %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><br>
+    <% if comment.user.name.blank? %>
+      <%= comment.user.email %>
+    <% else %>
+      <%= comment.user.name %>
+    <% end %>
+
+    <%= comment.created_at.strftime('%F %T') %><br>
     <div>
       <%= comment.comment %>
       <% if comment.user == current_user %>
