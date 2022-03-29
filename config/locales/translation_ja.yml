@@ -22,14 +22,16 @@ ja:
         text: 内容
         create_at: 投稿日
   create_report: 日報を作成する
-  layouts:
-    application:
-      create: "日報を作成する"
-  my_reports: "自分の日報"
-  reports_all: "みんなの日報"
-  reports: "日報一覧"
+  my_reports: 自分の日報
+  reports_all: みんなの日報
   users:
     reports:
       edit:
         title: "日報の編集"
   comments_count: "コメント件数"
+  notice:
+    destroy: "コメントを削除しました"
+  no_comments_yet: "コメントはまだありません"
+  views:
+    common:
+      index: "日報一覧"

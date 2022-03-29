@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     params[:comment][:user_id] = current_user.id
     @comment = @commentable.comments.build(comments_params)
     if @comment.save
-      redirect_to request.referer, notice: 'Comment was successfully created.'
+      redirect_to request.referer, notice: t('controllers.common.notice_create')
     else
       render :new
     end
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to request.referer, notice: 'Comment was successfully destroyed.'
+    redirect_to request.referer, notice: t('controllers.common.notice_destroy')
   end
 
   private

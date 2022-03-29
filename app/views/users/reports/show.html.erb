@@ -1,7 +1,7 @@
 <h2><%= @report.title %></h2>
 
 <p><%= Report.human_attribute_name(:text) %>：<%= @report.text %></p>
-<p><%= Report.human_attribute_name(:create_at) %>：<%= @report.created_at %></p>
+<p><%= Report.human_attribute_name(:create_at) %>：<%= l(@report.created_at, format: :short) %></p>
 
 <% if current_user.id == @report.user_id %>
   <%= link_to t('views.common.edit'), edit_user_report_path %>
@@ -12,25 +12,27 @@
 
 <%= link_to t('views.common.back'), request.referer %>
 
-<%= render 'comments/form' , commentable: @report, comment: @comments %>
-<p><%= t'comments_count' %>：<%= @report.comments.count %></p>
-<% @comments.each do |comment| %>
-  <div>
-    <% if comment.user.name.blank? %>
-      <%= comment.user.email %>
-    <% else %>
-      <%= comment.user.name %>
-    <% end %>
-    <%= comment.created_at.strftime('%F %T') %><br>
+<%= render 'comments/form', commentable: @report, comment: @comments %>
+<% if @comments.count.zero? %>
+  <p><%= t 'no_comments_yet' %></p>
+<% else %>
+  <p><%= t 'comments_count' %>：<%= @comments.count %></p>
+  <% @comments.each do |comment| %>
     <div>
-      <%= comment.comment %>
-      <% if comment.user == current_user %>
-        <div>
-          <%= link_to t('views.common.destroy'), report_comment_path(@report, comment.id), method: :delete %>
-        </div>
-        </div>
-        </div>
+      <% if comment.user.name.blank? %>
+        <%= comment.user.email %>
+      <% else %>
+        <%= comment.user.name %>
       <% end %>
+      <%= l(comment.created_at, format: :short) %><br>
+      <div>
+        <%= comment.comment %>
+        <% if comment.user == current_user %>
+          <div>
+            <%= link_to t('views.common.destroy'), report_comment_path(@report, comment.id), method: :delete %>
+          </div>
+          </div>
+          </div>
+        <% end %>
+  <% end %>
 <% end %>
-
-
