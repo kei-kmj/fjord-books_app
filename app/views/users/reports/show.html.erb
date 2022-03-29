@@ -12,6 +12,21 @@
 
 <%= link_to t('views.common.back'), request.referer %>
 
-<%= @reports.name %>
-<%= render 'comments/form', commentable: @report, comment: @comments %>
+<%= render 'comments/form' , commentable: @report, comment: @comments %>
+<p>コメント件数：<%= @comments.count %></p>
+<% @comments.each do |comment| %>
+  <div>
+    <%= comment.user_id %>
+    <%= comment.created_at.strftime('%Y/%m/%d') %><br>
+    <div>
+      <%= comment.comment %>
+      <% if comment.user == current_user %>
+        <div>
+          <%= link_to t('views.common.destroy'), report_comment_path(@report, comment.id), method: :delete %>
+        </div>
+        </div>
+        </div>
+      <% end %>
+<% end %>
+
 

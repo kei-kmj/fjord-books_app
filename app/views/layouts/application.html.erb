@@ -27,10 +27,10 @@
             <%= link_to t('devise.registrations.edit.title'), edit_user_registration_path %>
           </li>
           <li>
-          <%= link_to t('create_report'), new_user_report_path(:user_id) %>
+          <%= link_to t('create_report'), new_user_report_path(current_user.id) %>
           </li>
           <li>
-            <%= link_to t('my_reports'), user_reports_path(:report_id) %>
+            <%= link_to t('my_reports'), user_reports_path(current_user.id) %>
           </li>
           <li>
             <%= link_to t('reports_all'), reports_path %>

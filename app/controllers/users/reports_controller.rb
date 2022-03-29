@@ -11,7 +11,11 @@ class Users::ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def show; end
+  def show
+    @report = Report.find(params[:id])
+    @comment = Comment.new
+    @comments = @report.comments
+  end
 
   def create
     params[:report][:user_id] = current_user.id
@@ -30,7 +34,7 @@ class Users::ReportsController < ApplicationController
   end
 
   def update
-    # params[:report][:user_id] = current_user.id
+    params[:report][:user_id] = current_user.id
     respond_to do |format|
       if @report.update(report_params)
         format.html { redirect_to user_report_path, notice: t('controllers.common.notice_update') }
