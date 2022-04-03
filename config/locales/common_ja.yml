@@ -2,6 +2,6 @@ ja:
   create_report: 日報を作成する
   my_reports: 自分の日報
   reports_all: みんなの日報
-  comments_count: "コメント件数"
-  no_comments_yet: "コメントはまだありません"
-  there_is_no_data: "データがありません"
+  comments_count: コメント件数
+  no_comments_yet: コメントはまだありません
+  there_is_no_data: データがありません
