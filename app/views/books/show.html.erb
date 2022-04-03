@@ -22,15 +22,11 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
-
-
 <br>
-
 <%= render 'comments/form', commentable: @book, comment: @comments %>
 
-
 <% if @comments.count.zero? %>
-  <p><%= t'no_comments_yet' %></p>
+  <p><%= t 'no_comments_yet' %></p>
 <% else %>
   <p><%= t 'comments_count' %>：<%= @comments.count %></p>
   <% @comments.each do |comment| %>
@@ -41,7 +37,7 @@
         <%= comment.user.name %>
       <% end %>
 
-      <%= l(comment.created_at, format: :short)%><br>
+      <%= l(comment.created_at, format: :short) %><br>
       <div>
         <%= comment.comment %>
         <% if comment.user == current_user %>
