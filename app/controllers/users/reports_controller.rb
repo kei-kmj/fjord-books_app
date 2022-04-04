@@ -30,14 +30,14 @@ class Users::ReportsController < ApplicationController
   end
 
   def edit
-    @report = Report.find(params[:id])
+    @report = Report.find(params[:id]) if @report.user == current_user
   end
 
   def update
     params[:report][:user_id] = current_user.id
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to user_report_path, notice: t('controllers.common.notice_update') }
+        format.html { redirect_to user_report_path, notice: t('controllers.common.notice_update', name: Report.model_name.human) }
       else
         format.html { render :edit }
       end
@@ -47,7 +47,7 @@ class Users::ReportsController < ApplicationController
   def destroy
     @report.destroy
     respond_to do |format|
-      format.html { redirect_to user_reports_path, notice: t('controllers.common.notice_destroy') }
+      format.html { redirect_to user_reports_path, notice: t('controllers.common.notice_destroy', name: Report.model_name.human) }
     end
   end
 

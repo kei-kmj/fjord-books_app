@@ -8,15 +8,15 @@ class CommentsController < ApplicationController
     params[:comment][:user_id] = current_user.id
     @comment = @commentable.comments.build(comments_params)
     if @comment.save
-      redirect_to request.referer, notice: t('controllers.common.notice_create')
+      redirect_to request.referer, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       render :new
     end
   end
 
   def destroy
-    @comment.destroy
-    redirect_to request.referer, notice: t('controllers.common.notice_destroy')
+    @comment.destroy if @comment.user == current_user
+    redirect_to request.referer, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
