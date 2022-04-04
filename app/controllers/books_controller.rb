@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @comment = Comment.new
-    @comments = @book.comments
+    @comments = @book.comments.order(created_at: 'ASC')
   end
 
   # GET /books/new

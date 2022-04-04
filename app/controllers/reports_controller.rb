@@ -2,6 +2,6 @@
 
 class ReportsController < ApplicationController
   def index
-    @reports = Report.order(created_at: "ASC")
+    @reports = Report.order(created_at: 'ASC')
   end
 end

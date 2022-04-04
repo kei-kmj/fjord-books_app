@@ -14,7 +14,7 @@ class Users::ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
     @comment = Comment.new
-    @comments = @report.comments
+    @comments = @report.comments.order(created_at: 'ASC')
   end
 
   def create
