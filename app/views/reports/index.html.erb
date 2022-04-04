@@ -1,5 +1,6 @@
 <h1><%= t 'reports_all' %></h1>
 <% @reports.each do |report| %>
+  <% next if report.user.blank? %>
   <p>
     <%= link_to report.title, user_report_path(report.user_id, report.id) %>
   </p>

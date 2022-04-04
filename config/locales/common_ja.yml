@@ -8,4 +8,6 @@ ja:
   views:
     common:
       index: 日報一覧
+  comment: "コメント"
+  anonymous: "名無しさん"
 

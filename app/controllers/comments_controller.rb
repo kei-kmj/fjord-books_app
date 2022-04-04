@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_commentable
   before_action :set_comment, only: [:destroy]
 
   def create
@@ -20,11 +19,6 @@ class CommentsController < ApplicationController
   end
 
   private
-
-  def set_commentable
-    resource, id = request.path.split('/')[1, 2]
-    @commentable = resource.singularize.classify.constantize.find(id)
-  end
 
   def set_comment
     @comment = Comment.find(params[:id])
