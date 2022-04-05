@@ -1,0 +1,68 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "ユーザー名"
+        current_password: "現在のパスワード"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"
+    models:
+      user: "ユーザ"
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: "アカウント確認メール再送"
+    mailer:
+      confirmation_instructions:
+        action: "アカウント確認"
+        greeting: "ようこそ、%{recipient}さん!"
+        instruction: "次のリンクでメールアドレスの確認が完了します:"
+      reset_password_instructions:
+        action: "パスワード変更"
+        greeting: "こんにちは、%{recipient}さん!"
+        instruction: "誰かがパスワードの再設定を希望しました。次のリンクでパスワードの再設定が出来ます。"
+        instruction_2: "あなたが希望したのではないのなら、このメールは無視してください。"
+        instruction_3: "上のリンクにアクセスして新しいパスワードを設定するまで、パスワードは変更されません。"
+        someone_has_requested_a_link_to_change_your_password:
+          _You_can_do_this_through_the_link_below: "以下のリンクからパスワードを変更してください。"
+        if_you_didnt_request_this, please_ignore_this_email: "このメールに心当たりが無ければメールを無視してください。"
+        your_password_wont_change_until_you_access_the_link_above_and_create_a_new_one: "上記のリンクにアクセスして新しいパスワードを作成するまで、パスワードは変更されません。"
+    passwords:
+      edit:
+        change_my_password: "パスワードを変更する"
+        change_your_password: "パスワードを変更"
+        confirm_new_password: "確認用新しいパスワード"
+        new_password: "新しいパスワード"
+      new:
+        forgot_your_password?: "パスワードを忘れましたか?"
+        send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
+    registrations:
+      edit:
+        are_you_sure: "本当に良いですか?"
+        cancel_my_account: "アカウント削除"
+        currently_waiting_confirmation_for_email: "%{email} の確認待ち"
+        leave_blank_if_you_don_t_want_to_change_it: "空欄のままなら変更しません"
+        title: "%{resource}編集"
+        unhappy: "気に入りません"
+        update: "更新"
+        we_need_your_current_password_to_confirm_your_changes: "変更を反映するには現在のパスワードを入力してください"
+        leave_blank_if_you_don't_want_to_change_it: "変更不要なら空欄のままにしてください"
+        edit: "ユーザー情報編集"
+      new:
+        sign_up: "アカウント登録"
+    sessions:
+      new:
+        sign_in: "ログイン"
+    shared:
+      links:
+        back: "戻る"
+        didn_t_receive_confirmation_instructions: "アカウント確認のメールを受け取っていませんか?"
+        didn_t_receive_unlock_instructions: "アカウントの凍結解除方法のメールを受け取っていませんか?"
+        forgot_your_password: "パスワードを忘れましたか?"
+        sign_in: "ログイン"
+        sign_up: "アカウント登録"
+    unlocks:
+      new:
+  change_my_password: "パスワードを変更する"

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= User.human_attribute_name('user_name') %>:</strong>
+  <%= @user.name %>
+</p><p>
+  <strong><%= User.human_attribute_name('email') %>:</strong>
+  <%= @user.email %>
+</p><p>
+  <strong>〒:</strong>
+  <%= @user.post_code %>
+</p><p>
+  <strong><%= User.human_attribute_name('address') %>:</strong>
+  <%= @user.address %>
+
+</p><p>
+  <strong><%= User.human_attribute_name('about_me') %>:</strong>
+  <%= @user.about_me %>
+</p>
+
+
+<% if @user.id == current_user.id %>
+  <%= link_to t('edit'), edit_user_registration_path %>
+<% end %>
+
