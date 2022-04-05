@@ -15,3 +15,6 @@ ja:
         postal_code: 郵便番号
         address: 住所
         self_introduction: 自己紹介文
+        image: 画像
+  remove_image: "画像削除"
+  not_the_specified_extension_(png/jpeg/jpg/gif): "：指定された拡張子（png/jpeg/jpg/gif）ではありません"
