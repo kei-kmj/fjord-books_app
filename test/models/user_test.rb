@@ -3,23 +3,31 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "#name_or_email" do
-    user = User.new(email: 'foo@sample.com', name: '')
-    assert_equal 'foo@sample.com', user.name_or_email
-
-    user.name = 'piyo'
-    assert_equal 'piyo', user.name_or_email
+  setup do
+    @ben = User.create!(email: 'ben@example.com', password: 'benben')
+    @tom = User.create!(name: 'Tom', email: 'tom@example.com', password: 'tomtom')
   end
 
-  test '#follow_and_unfollow' do
-    ben = User.create!(email: 'ben@example.com', password: 'benben')
-    tom = User.create!(email: 'tom@example.com', password: 'tomtom')
+  test "名前が無いuser(Ben)はメアドを返す" do
+    assert_equal 'ben@example.com', @ben.name_or_email
+  end
 
-    tom.follow(ben)
-    assert tom.following?(ben)
-    assert ben.followed_by?(tom)
-    tom.unfollow(ben)
-    assert_not tom.following?(ben)
-    assert_not ben.followed_by?(tom)
+  test "名前があるuser(Tom)は名前を返す" do
+    assert_equal 'Tom', @tom.name_or_email
+  end
+
+  test 'TomはBenをフォローする' do
+    @tom.follow(@ben)
+    assert @tom.following?(@ben)
+  end
+
+  test 'BenはTomをフォローしていない' do
+    assert_not @ben.followed_by?(@tom)
+  end
+
+  test 'TomはBenのフォローをやめる' do
+    @tom.unfollow(@ben)
+    assert_not @tom.following?(@ben)
   end
 end
+
