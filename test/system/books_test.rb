@@ -4,13 +4,14 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    @book = books(:one)
+    @book = books(:musashi)
     sign_in
   end
 
   test 'visiting the index' do
     visit books_url
     assert_selector 'h1', text: '本'
+    assert_text '五輪書'
   end
 
   test 'creating a Book' do

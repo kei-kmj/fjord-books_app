@@ -46,8 +46,6 @@ class ReportsTest < ApplicationSystemTestCase
     page.accept_confirm do
       click_on '削除'
     end
-
     assert_text '日報が削除されました。'
   end
-
 end

@@ -8,11 +8,11 @@ class UserTest < ActiveSupport::TestCase
     @tom = User.create!(name: 'Tom', email: 'tom@example.com', password: 'tomtom')
   end
 
-  test "名前が無いuser(Ben)はメアドを返す" do
+  test '名前が無いuser(Ben)はメアドを返す' do
     assert_equal 'ben@example.com', @ben.name_or_email
   end
 
-  test "名前があるuser(Tom)は名前を返す" do
+  test '名前があるuser(Tom)は名前を返す' do
     assert_equal 'Tom', @tom.name_or_email
   end
 
@@ -30,4 +30,3 @@ class UserTest < ActiveSupport::TestCase
     assert_not @tom.following?(@ben)
   end
 end
-

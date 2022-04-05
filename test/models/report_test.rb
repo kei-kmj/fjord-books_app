@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-
   setup do
     @alice = User.new(email: 'alice@sample.com', name: 'alice')
     @bob = User.new(email: 'bob@sample.com', name: 'bob')
@@ -20,6 +19,5 @@ class ReportTest < ActiveSupport::TestCase
 
   test 'aliceの　created_on 時間' do
     assert_equal '2022-04-01', @report.created_on.to_s
-
-end
+  end
 end
