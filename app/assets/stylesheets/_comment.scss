@@ -1,0 +1,37 @@
+.comment_bg {
+  padding-top: 20px;
+}
+
+.comment_box {
+  margin: 2em 0;
+  position: relative;
+  padding: 0.25em 1em;
+  width: 250px;
+  border: solid 2px #ffcb8a;
+  background-color: #FFFFCC;
+  border-radius: 3px 0 3px 0;
+}
+
+.comment_box:before, .comment_box:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: solid 2px #ffcb8a;
+  border-radius: 50%;
+}
+
+.comment_box:after {
+  top: -12px;
+  left: -12px;
+}
+
+.comment_box:before {
+  bottom: -12px;
+  right: -12px;
+}
+
+.comment_box p {
+  margin: 0;
+  padding: 0;
+}

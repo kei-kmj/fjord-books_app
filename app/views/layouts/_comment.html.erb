@@ -1,27 +1,30 @@
-<% if comments.count.zero? %>
-  <p><%= t 'no_comments_yet' %></p>
-<% else %>
-  <p><%= t 'comments_count' %>：<%= comments.count %></p>
-<% end %>
-<% comments.each do |comment| %>
-  <div>
-    <% if comment.user.blank? %>
-      <%= t 'anonymous' %>
-    <% else %>
-      <% if comment.user.name.blank? %>
-        <%= comment.user.email %>
+<div class="comment_bg">
+  <% if comments.count.zero? %>
+    <p><%= t 'no_comments_yet' %></p>
+  <% else %>
+    <p><%= t 'comments_count' %>：<%= comments.count %></p>
+  <% end %>
+  <% comments.each do |comment| %>
+    <div class="comment_box">
+      <% if comment.user.blank? %>
+        <%= t 'anonymous' %>
       <% else %>
-        <%= comment.user.name %>
+        <% if comment.user.name.blank? %>
+          <%= comment.user.email %>
+        <% else %>
+          <%= comment.user.name %>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= l(comment.created_at, format: :short) %><br>
-    <div>
-      <%= comment.comment %>
-      <% if comment.user == current_user %>
-        <div>
-          <%= link_to t('views.common.destroy'),  [comment.commentable, comment], method: :delete %>
-        </div>
-      <% end %>
+      <%= l(comment.created_at, format: :short) %><br>
+      <div>
+        <%= comment.comment %>
+        <% if comment.user == current_user %>
+          <div>
+            <%= link_to t('views.common.destroy'), [comment.commentable, comment], method: :delete %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
+
