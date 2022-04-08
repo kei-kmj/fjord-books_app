@@ -45,7 +45,7 @@ class Users::ReportsController < ApplicationController
   end
 
   def destroy
-    @report.destroy if @comment.user == current_user
+    @report.destroy if @report.user == current_user
     respond_to do |format|
       format.html { redirect_to user_reports_path, notice: t('controllers.common.notice_destroy', name: Report.model_name.human) }
     end
