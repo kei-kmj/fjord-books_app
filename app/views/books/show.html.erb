@@ -25,4 +25,4 @@
 <br>
 <%= render 'comments/form', commentable: @book, comment: @comments %>
 
-<%= render partial: "layouts/comment" %>
+<%= render partial: "layouts/comment", locals: { comments: @comments }%>

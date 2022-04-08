@@ -1,9 +1,9 @@
-<% if @comments.count.zero? %>
+<% if comments.count.zero? %>
   <p><%= t 'no_comments_yet' %></p>
 <% else %>
-  <p><%= t 'comments_count' %>：<%= @comments.count %></p>
+  <p><%= t 'comments_count' %>：<%= comments.count %></p>
 <% end %>
-<% @comments.each do |comment| %>
+<% comments.each do |comment| %>
   <div>
     <% if comment.user.blank? %>
       <%= t 'anonymous' %>
@@ -19,7 +19,7 @@
       <%= comment.comment %>
       <% if comment.user == current_user %>
         <div>
-          <%= link_to t('views.common.destroy'), report_comment_path(@report, comment.id), method: :delete %>
+          <%= link_to t('views.common.destroy'),  [comment.commentable, comment], method: :delete %>
         </div>
       <% end %>
     </div>

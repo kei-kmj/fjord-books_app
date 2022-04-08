@@ -14,5 +14,5 @@
 
 <%= render 'comments/form', commentable: @report, comment: @comments %>
 
-<%= render partial: "layouts/comment" %>
+<%= render partial: "layouts/comment", locals: { comments: @comments } %>
 
