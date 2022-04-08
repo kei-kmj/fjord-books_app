@@ -4,7 +4,7 @@ class Users::ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
   def index
-    @reports = Report.where(user_id: current_user.id).order(:created_at)
+    @reports = current_user.reports.order(:created_at)
   end
 
   def new
@@ -30,7 +30,7 @@ class Users::ReportsController < ApplicationController
   end
 
   def edit
-    @report = Report.find(params[:id]) if @report.user == current_user
+    @report = Report.find(params[:id])
   end
 
   def update
@@ -54,7 +54,7 @@ class Users::ReportsController < ApplicationController
   private
 
   def set_report
-    @report = Report.find(params[:id])
+    @report = current_user.reports.find(params[:id])
   end
 
   def report_params
