@@ -30,7 +30,7 @@ class Users::ReportsController < ApplicationController
   end
 
   def edit
-    @report = Report.find(params[:id])
+    @report = Report.find(params[:id]) if @report.user == current_user
   end
 
   def update
