@@ -24,11 +24,14 @@ class BooksTest < ApplicationSystemTestCase
 
     assert_text '本が作成されました。'
     assert_text '五輪書'
+    click_on '戻る'
+    assert_selector 'h1', text: '本'
 
   end
 
   test 'updating a Book' do
     visit books_url
+    assert_text '五輪書'
     click_link '編集', match: :prefer_exact
     fill_in 'タイトル', with: '武士道'
     fill_in 'メモ', with: '武士とは'
@@ -38,14 +41,18 @@ class BooksTest < ApplicationSystemTestCase
 
     assert_text '本が更新されました。'
     assert_text '武士道'
+    click_on '戻る'
+    assert_selector 'h1', text: '本'
   end
 
   test 'destroying a Book' do
     visit books_url
+    assert_text '五輪書'
     page.accept_confirm do
       click_link '削除', match: :first
     end
 
     assert_text '本が削除されました。'
+    assert_no_text '五輪書'
   end
 end

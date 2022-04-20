@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-Alice_report:
+alice:
   user: alice
   title: 不思議の国
   content: 鏡の国
