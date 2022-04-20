@@ -26,7 +26,6 @@ class BooksTest < ApplicationSystemTestCase
     assert_text '五輪書'
     click_on '戻る'
     assert_selector 'h1', text: '本'
-
   end
 
   test 'updating a Book' do
