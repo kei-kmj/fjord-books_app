@@ -6,18 +6,18 @@ class ReportTest < ActiveSupport::TestCase
   setup do
     @alice = User.new(email: 'alice@sample.com', name: 'alice')
     @bob = User.new(email: 'bob@sample.com', name: 'bob')
-    @report = @alice.reports.new(title: 'TDD', content: 'Test-Driven Development', user_id: @alice.id, created_at: '2022-04-01 10:00:00')
+    @report = @alice.reports.new(title: 'TDD', content: 'Test-Driven Development', created_at: '2022-04-01 10:00:00')
   end
 
-  test 'aliceは　editable' do
+  test 'aliceはeditable' do
     assert @report.editable?(@alice)
   end
 
-  test 'bobは　not editable' do
+  test 'bobはnot editable' do
     assert_not @report.editable?(@bob)
   end
 
-  test 'aliceの　created_on 時間' do
+  test 'aliceのcreated_on日' do
     assert_equal '2022-04-01', @report.created_on.to_s
   end
 end
