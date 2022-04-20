@@ -18,25 +18,26 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '新規作成'
 
-    fill_in 'メモ', with: @book.memo
-    fill_in 'タイトル', with: @book.title
+    fill_in 'メモ', with: '巌流島'
+    fill_in 'タイトル', with: '五輪書'
     click_on '登録する'
 
     assert_text '本が作成されました。'
-    click_on '戻る'
+    assert_text '五輪書'
+
   end
 
   test 'updating a Book' do
     visit books_url
     click_link '編集', match: :prefer_exact
-    fill_in 'book[title]', with: '武士道'
-    fill_in 'book_memo', with: '武士とは'
+    fill_in 'タイトル', with: '武士道'
+    fill_in 'メモ', with: '武士とは'
     fill_in '著者', with: '新渡戸稲造'
 
     click_on '更新する'
 
     assert_text '本が更新されました。'
-    click_on '戻る'
+    assert_text '武士道'
   end
 
   test 'destroying a Book' do
