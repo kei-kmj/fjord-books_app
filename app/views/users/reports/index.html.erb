@@ -1,0 +1,6 @@
+<h1><%= Report.model_name.human %></h1>
+<% @reports.each do |report| %>
+  <p>
+    <%= link_to report.title, user_report_path(report.user_id, report.id) %>
+  </p>
+<% end %>

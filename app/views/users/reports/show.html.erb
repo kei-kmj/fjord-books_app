@@ -1,0 +1,18 @@
+<h2><%= @report.title %></h2>
+
+<p><%= Report.human_attribute_name(:text) %>：<%= @report.text %></p>
+<p><%= Report.human_attribute_name(:create_at) %>：<%= l(@report.created_at, format: :short) %></p>
+
+<% if current_user.id == @report.user_id %>
+  <%= link_to t('views.common.edit'), edit_user_report_path %>
+
+  <%= link_to t('views.common.destroy'), user_report_path(@report.id), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+
+<% end %>
+
+<%= link_to t('views.common.back'), request.referer %>
+
+<%= render 'comments/form', commentable: @report, comment: @comments %>
+
+<%= render partial: "layouts/comment", locals: { comments: @comments } %>
+
